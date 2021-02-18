@@ -1,0 +1,254 @@
+extends ../_template
+
+block variables
+    - var title = 'Кандидаты. В работе :::  skilla'
+block content
+    .cbc
+        aside.sidebar
+            .sidebar__top
+                .sidebar__logo
+                    a(href='contract-add-individual.html')
+                        img(src='assets/img/logo.svg' alt='')
+                button.sidebar__toggle.toggle-sidebar
+                    img(src='assets/img/burger-open.svg' alt='')
+            .sidebar__user
+                .sb-user
+                    .sb-user__wrap
+                        figure.sb-user__ava
+                            img(src='assets/userfiles/uploads/img-logo.png' alt='')
+                        .sb-user__info
+                            .sb-user__name Снежана Бабичева
+                            .sb-user__contacts
+                                | hi@skilla.ru
+                                br
+                                | 8 (800) 333-17-21
+                    .sb-user__popup.user-popup
+                        .user-popup__name Анатолий Квирая
+                        .user-popup__post Менеджер
+                        .user-popup__contacts
+                            | 8 800 775-63-17
+                            br
+                            |                            T.Kviraja@skilla.ru
+                        .user-popup__info
+                            | ИП Упоров К.А.
+                            br
+                            |                            Санкт-Петербург
+                        .user-popup__nav.user-nav
+                            .user-nav__item
+                                a.user-nav__link(href='#') Выйти
+            .sidebar__wrap
+                .side-nav
+                    .side-nav__item
+                        a.side-nav__link.sn-link.active(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector.svg' alt='')
+                            span.sn-link__title Расписание
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-1.svg' alt='')
+                            span.sn-link__title Кандидаты
+                            span.sn-link__label.sn-link__label--yellow
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-2.svg' alt='')
+                            span.sn-link__title Звонки
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-3.svg' alt='')
+                            span.sn-link__title Стажеры
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-4.svg' alt='')
+                            span.sn-link__title Настройки
+                .side__add
+                    a(href='#').btn-add
+                        .btn-add__span Добавить кандидата
+
+        main.page-content
+            .page-content__wrap
+                .page-header
+                    h1.header__name Расписание
+                    .sortable
+                        .sortable__item.sortable__item__vac
+                            .drop-list(data-title-replace='true')
+                                .drop-list__title Все сотрудники
+                                ul.drop-list__dropdown.dl-dropdown
+                                    li.dl-dropdown__item.active
+                                        a(href='#') Все сотрудники
+                                    li.dl-dropdown__item
+                                        a(href='#') Бабичева Снежана
+                                    li.dl-dropdown__item
+                                        a(href='#') Корчагина Юля
+                                    li.dl-dropdown__item
+                                        a(href='#') Бабичева Снежана
+                                    li.dl-dropdown__item
+                                        a(href='#') Ассистент Ассистентов
+                        .sortable__item.sortable__item__days
+                            .sort-block
+                                .sort-block__item.sort-block__item_left
+                                    a.sort__arrow.sort-left(href='#')
+                                        img(src='assets/img/new/left.svg')
+                                .sort-block__item.sort-block__item_center
+                                    .dropdown-date__form.date-range(data-close-dropdown='true')
+                                        //.date-range__input
+                                            //input.date-start(type='text' value='' placeholder='__.__.__' disabled='')
+                                        //.date-range__sepor –
+                                        //.date-range__input
+                                            //input.date-finish(type='text' value='' placeholder='__.__.__' disabled='')
+                                        input.range-datepicker.date-range__datepicker(type='text' data-range='true' name='date' autocomplete='off')
+                                    .sort__range 3 Дня
+                                .sort-block__item.sort-block__item_right
+                                    a.sort__arrow.sort-right(href='#')
+                                        img(src='assets/img/new/arrow-right.svg')
+
+                .popup-card.popup.popup__write.popup__write--js(data-time= '')
+                    .popup__wrap
+                        .popup__head Запись на интервью
+                        .popup__manager Пятница, 26 янв, 09:00
+                        .popup__name.name--js
+                            select(data-placeholder=" ")
+                                option Петрова Жанна
+                                option Андреев Андрей
+                                option Афанасьева Анна
+                        .popup__name.vac--js
+                            select(data-placeholder="")
+                                option Вакансия
+                                option руководитель отдела
+                                option логист
+                        .popup__name.mb30.intervier--js
+                            select(data-placeholder=" ")
+                                option Интервьюер
+                                option Бабичева Снежана
+                                option Андреев Андрей
+
+                        .popup__button
+                            button.button.perenos__ok.write__ok--js Назначить
+                    button.popup-card__close.button-cross.fi.icon-cross.popup-close--js
+                .white-box.pt20
+                        table.tbl.rasp-tbl
+                            tbody
+                                tr.rasp__head
+                                    th
+                                    th
+                                        .rasp-head
+                                            .rasp-head__date-name Вчера
+                                            .rasp-head__date среда, 24 янв
+                                    th
+                                    th
+                                        .rasp-head
+                                            .rasp-head__date-name Сегодня
+                                            .rasp-head__date среда, 24 янв
+                                    th
+                                    th
+                                        .rasp-head
+                                            .rasp-head__date-name Завтра
+                                            .rasp-head__date среда, 24 янв
+                                    th
+                                tr.rasp__head-hr
+                                    th
+                                    th.col-hr-name Бабичева Снежана
+                                    th.col-hr-name Второв Эйчар
+                                    th.col-hr-name Бабичева Снежана
+                                    th.col-hr-name Второв Эйчар
+                                    th.col-hr-name Бабичева Снежана
+                                    th.col-hr-name Второв Эйчар
+                                tr.rasp__row
+                                    th
+                                        .rasp__time.rasp__time_main 09:00
+                                    th
+                                        .rasp__block
+                                            + item
+                                    th
+                                        .rasp__block
+                                            + item
+
+                                    th
+                                        .rasp__block
+                                            + item-call
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                tr.rasp__row
+                                    th
+                                        .rasp__time 09:20
+                                    th
+                                        .rasp__block
+                                            + item
+                                    th
+                                        .rasp__block
+                                            + item
+
+                                    th
+                                        .rasp__block
+                                            + item-call
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                tr.rasp__row
+                                    th
+                                        .rasp__time 09:40
+                                    th
+                                        .rasp__block
+                                            + item
+                                    th
+                                        .rasp__block
+
+                                    th
+                                        .rasp__block
+                                            + item-call
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                tr.rasp__row.rasp__row_main
+                                    th
+                                        .rasp__time.rasp__time_main 10:00
+                                    th
+                                        .rasp__block
+                                            + item
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                tr.rasp__row.rasp__row_main
+                                    th
+                                        .rasp__time 10:20
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                tr.rasp__row.rasp__row_main
+                                    th
+                                        .rasp__time 10:40
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block
+                                    th
+                                        .rasp__block

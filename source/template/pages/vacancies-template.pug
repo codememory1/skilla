@@ -1,0 +1,105 @@
+extends ../_template
+
+block variables
+    - var title = 'Кандидаты. В работе :::  skilla'
+block content
+    .cbc
+        aside.sidebar
+            .sidebar__top
+                .sidebar__logo
+                    a(href='contract-add-individual.html')
+                        img(src='assets/img/logo.svg' alt='')
+                button.sidebar__toggle.toggle-sidebar
+                    img(src='assets/img/burger-open.svg' alt='')
+            .sidebar__user
+                .sb-user
+                    .sb-user__wrap
+                        figure.sb-user__ava
+                            img(src='assets/userfiles/uploads/img-logo.png' alt='')
+                        .sb-user__info
+                            .sb-user__name Снежана Бабичева
+                            .sb-user__contacts
+                                | hi@skilla.ru
+                                br
+                                | 8 (800) 333-17-21
+                    .sb-user__popup.user-popup
+                        .user-popup__name Анатолий Квирая
+                        .user-popup__post Менеджер
+                        .user-popup__contacts
+                            | 8 800 775-63-17
+                            br
+                            |                            T.Kviraja@skilla.ru
+                        .user-popup__info
+                            | ИП Упоров К.А.
+                            br
+                            |                            Санкт-Петербург
+                        .user-popup__nav.user-nav
+                            .user-nav__item
+                                a.user-nav__link(href='#') Выйти
+            .sidebar__wrap
+                .side-nav
+                    .side-nav__item
+                        a.side-nav__link.sn-link.active(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector.svg' alt='')
+                            span.sn-link__title Расписание
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-1.svg' alt='')
+                            span.sn-link__title Кандидаты
+                            span.sn-link__label.sn-link__label--yellow
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-2.svg' alt='')
+                            span.sn-link__title Звонки
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-3.svg' alt='')
+                            span.sn-link__title Стажеры
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-4.svg' alt='')
+                            span.sn-link__title Настройки
+                .side__add
+                    a(href='#').btn-add
+                        .btn-add__span Добавить кандидата
+
+        main.page-content
+            .page-content__wrap
+                .page-header
+                    .tab-list
+                        .tab-list__item
+                            a.tab-item(href='#')
+                                span.tab-item__title Вакансии
+                        .tab-list__item
+                            a.tab-item.tab-item--active(href='#')
+                                span.tab-item__title Шаблоны отказа
+                        .tab-list__item
+                            a.tab-item(href='#')
+                                span.tab-item__title Архив
+                        .tab-list__item
+                            a.tab-item(href='#')
+                                span.tab-item__title Интервьюеры
+
+
+                .white-box
+                    .forms.form-edit
+                        .form-header
+                            .form-header__title.title-h2 Шаблоны отказа
+
+                        .forms__field
+                            .forms__label Текст СМС
+                            .forms__textarea
+                                textarea.input_textarea(type='text' value='' cols='10' rows='60' )
+                        .forms__field
+                            .forms__label Текст Email
+                            .forms__textarea
+                                textarea.input_textarea(type='text' value='' cols='10' rows='60' )
+
+
+                        .forms-buttons
+                            button.button Создать

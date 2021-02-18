@@ -1,0 +1,556 @@
+extends ../_template
+
+block variables
+    - var title = 'Карточка создана :::  skilla'
+block content
+    .cbc
+        aside.sidebar
+            .sidebar__top
+                .sidebar__logo
+                    a(href='contract-add-individual.html')
+                        img(src='assets/img/logo.svg' alt='')
+                button.sidebar__toggle.toggle-sidebar
+                    img(src='assets/img/burger-open.svg' alt='')
+            .sidebar__user
+                .sb-user
+                    .sb-user__wrap
+                        figure.sb-user__ava
+                            img(src='assets/userfiles/uploads/img-logo.png' alt='')
+                        .sb-user__info
+                            .sb-user__name Снежана Бабичева
+                            .sb-user__contacts
+                                | hi@skilla.ru
+                                br
+                                | 8 (800) 333-17-21
+                    .sb-user__popup.user-popup
+                        .user-popup__name Анатолий Квирая
+                        .user-popup__post Менеджер
+                        .user-popup__contacts
+                            | 8 800 775-63-17
+                            br
+                            |                            T.Kviraja@skilla.ru
+                        .user-popup__info
+                            | ИП Упоров К.А.
+                            br
+                            |                            Санкт-Петербург
+                        .user-popup__nav.user-nav
+                            .user-nav__item
+                                a.user-nav__link(href='#') Выйти
+            .sidebar__wrap
+                .side-nav
+                    .side-nav__item
+                        a.side-nav__link.sn-link.active(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector.svg' alt='')
+                            span.sn-link__title Расписание
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-1.svg' alt='')
+                            span.sn-link__title Кандидаты
+                            span.sn-link__label.sn-link__label--yellow
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-2.svg' alt='')
+                            span.sn-link__title Звонки
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-3.svg' alt='')
+                            span.sn-link__title Стажеры
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-4.svg' alt='')
+                            span.sn-link__title Настройки
+                .side__add
+                    + sidebar
+
+        main.page-content
+            .page-content__wrap
+                .row
+                    .col-12
+                        .white-box.card-box
+                            .user-card
+                                .user-card__info
+                                    .user-card__title
+                                        a.fb(href='#name-edit') Войкова Виолета Геннадьевна
+
+                                    .popup#name-edit
+                                        form
+                                            .forms
+                                                .forms__field
+                                                    input(type='text', value='Борислав', placeholder='Имя')
+                                                .forms__field
+                                                    input(type='text', value='Сорокин', placeholder='Фамилия')
+                                                .forms__field
+                                                    input(type='text', placeholder='Отчество')
+                                                .forms__field
+                                                    label.forms__radio
+                                                        input(type='radio', name='sex', value='men', checked)
+                                                        span муж
+                                                    label.forms__radio
+                                                        input(type='radio', name='sex', value='women')
+                                                        span жен
+                                                .forms__note Изменения сохранены
+                                    .user-card__city
+                                        | 12 июля 1975 45 лет
+                                        |
+
+                                    .user-card__time_add
+                                    .mb10.mb30.color Добавлен 25 января 2021
+                                    .user-card__actions
+                                        //a(href='#') Создать договор
+                                        .drop-list(data-title-replace='true')
+                                            .drop-list__title.link Выберите вакансию
+                                            ul.drop-list__dropdown.dl-dropdown
+                                                li.dl-dropdown__item.active Вакансия
+                                                li.dl-dropdown__item Вакансия
+                                                li.dl-dropdown__item Вакансия
+                                    .candidat Кандидат
+                                    //.user-card__contract
+                                    //    a.link(href='#') Договор № 20191019-03 от 15 июля 2019
+                                    //.user-card__message
+                                    //    .ucard-message
+                                    //        div 300 000 ₽ рассрочка на год до 15 января
+                                    //        .ucard-message__tooltip.msg-tooltip
+                                    //            .sale-list
+                                    //                .sale-list__item.sale-item
+                                    //                    .sale-item__date до 15 янв 300 000 ₽
+                                    //                    .sale-item__title Базовый продукт со скидкой 50% в рассрочку на год
+                                    //                .sale-list__item.sale-item
+                                    //                    .sale-item__date до 1 янв 300 000 ₽
+                                    //                    .sale-item__title Базовый продукт со скидкой 50%
+                                    //                .sale-list__item.sale-item
+                                    //                    .sale-item__date до 15 дек 600 000 ₽
+                                    //                    .sale-item__title Базовый продукт в рассрочку на 3 месяца
+                                    //                .sale-list__item.sale-item
+                                    //                    .sale-item__date до 1 дек 600 000 ₽
+                                    //                    .sale-item__title Базовый продукт
+                                    //.user-card__message
+                                    //    .user-card__message.ucard-message.ucard-message--attention.
+                                    //
+                                    //        Клиент будет перенесен в общую базу через 12 часов!
+
+                                .user-card__contacts
+                                    .user-card__emails
+                                        .ucard-contacts
+                                            .ucard-contacts__item.ucard-contact
+                                                .ucard-contact__icon.fi.icon-mail-plus
+                                                div
+                                                    .ucard-contact__title borislav12@mail.ru
+                                                    .ucard-contact__comment
+                                                button.ucard-contact__del.button-cross.fi.icon-cross.js-contact-remove
+                                            //.ucard-contacts__action
+                                            //    .add-contact-form(data-type='email')
+                                            //        input.add-contact-form__contact(type='text', placeholder='E-mail')
+                                            //        input.add-contact-form__comment(type='text', placeholder='Комментарий')
+                                            //        button.add-contact-form__del.button-cross.fi.icon-cross.js-add-contact-close
+                                            //    button.ucard-add.fi.icon-plus-round.js-add-contact-show Добавить E-mail
+                                    .user-card__phones
+                                        .ucard-contacts.ucard-contacts--phones
+                                            .ucard-contacts__item.ucard-contact.ucard-contact--phone
+                                                .ucard-contact__icon.fi.icon-phone
+                                                div
+                                                    .ucard-contact__title +7 (915) 678-78-12
+                                                    .ucard-contact__comment
+                                                button.ucard-contact__del.button-cross.fi.icon-cross.js-contact-remove
+                                            //.ucard-contacts__action
+                                            //    .add-contact-form(data-type='phone')
+                                            //        input.add-contact-form__contact.phone-mask(type='text', placeholder='+7 (___) ___-__-__')
+                                            //        input.add-contact-form__comment(type='text', placeholder='Комментарий')
+                                            //        button.add-contact-form__del.button-cross.fi.icon-cross.js-add-contact-close
+                                            //    button.ucard-add.fi.icon-plus-round.js-add-contact-show Добавить номер
+                                    .card-comment
+                                        textarea.input_textarea.card-comment__input(type='text' value='' placeholder='Примечание' cols='10' rows='60' )
+                .row
+                    .col-xl-6.col-12
+                        .white-box.task-box
+                            .task-box__header.js-task-open
+                                .task-box__title Задача
+                                .task-box__task
+                                span.task-box__icon.fi.icon-plus-round
+                                button.task-box__del.button-cross.fi.icon-cross.js-task-remove
+                            .task-box__form.task-form.forms
+                                .task-form__wrap
+                                    .task-form__field.task-field
+                                        input.task-form__time.task-field__text.forms__time.time-mask(type='text', placeholder='__ __')
+                                        .task-form__variants
+                                            span.task-variant(data-type='time', data-val='10') 10
+                                            span.task-variant(data-type='time', data-val='30') 30
+                                            span.task-variant(data-type='time', data-val='60') 1 ч
+                                            span.task-variant(data-type='time', data-val='180') 3 ч
+                                    .task-form__field.task-field
+                                        input.task-form__date.task-field__text.forms__date.short-date-mask.datepicker-here(type='text', placeholder='дд-мм', data-auto-close='true', data-date-format='dd-mm')
+                                        .task-form__variants
+                                            span.task-variant(data-type='date', data-val='0') сегодня
+                                            span.task-variant(data-type='date', data-val='1') завтра
+                                            span.task-variant(data-type='date', data-val='mon') пн
+                                    button.task-form__button.button.js-task-create Создать
+                                button.task-form__close.button-cross.fi.icon-cross.js-task-close
+                    .col-xl-6.col-12
+                        .white-box.task-box
+                            .task-box__header.js-task-open
+                                .task-box__title Интервью
+                                .task-box__task
+                                span.task-box__icon.fi.icon-plus-round
+                                button.task-box__del.button-cross.fi.icon-cross.js-task-remove
+                            .task-box__form.task-form.forms
+                                .task-form__wrap
+                                    .task-form__field.task-field
+                                        input.task-form__time.task-field__text.forms__time.time-mask(type='text', placeholder='__ __')
+                                        .task-form__variants
+                                            span.task-variant(data-type='time', data-val='10') 10
+                                            span.task-variant(data-type='time', data-val='30') 30
+                                            span.task-variant(data-type='time', data-val='60') 1 ч
+                                            span.task-variant(data-type='time', data-val='180') 3 ч
+                                    .task-form__field.task-field
+                                        input.task-form__date.task-field__text.forms__date.short-date-mask.datepicker-here(type='text', placeholder='дд-мм', data-auto-close='true', data-date-format='dd-mm')
+                                        .task-form__variants
+                                            span.task-variant(data-type='date', data-val='0') сегодня
+                                            span.task-variant(data-type='date', data-val='1') завтра
+                                            span.task-variant(data-type='date', data-val='mon') пн
+                                    button.task-form__button.button.js-task-create Создать
+                                button.task-form__close.button-cross.fi.icon-cross.js-task-close
+
+
+
+                .row
+                    .col-xl-6.col-12
+                        .white-box.card-box
+                            .card-box__header
+                                .card-box-title.card-box-title--history Журнал
+                                .drop-list(data-title-replace='true')
+                                    .drop-list__title Все
+                                    ul.drop-list__dropdown.dl-dropdown
+                                        li.dl-dropdown__item.active Все
+                                        li.dl-dropdown__item Звонки
+                                        li.dl-dropdown__item Сообщения
+                                        li.dl-dropdown__item Комментарии
+                            .history
+                                .history__comments.forms
+                                    textarea(placeholder='Комментировать')
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon.df.alc.jcc
+                                            img(src='assets/img/card/7.svg')
+                                        .history-card__info
+                                            div
+                                                .history-card__title Стажировка не пройдена
+                                                .history-card__date сегодня, 9:00
+                                                .history-card__detail Снежана Бабичева
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon.df.alc.jcc
+                                            img(src='assets/img/card/5.svg')
+                                        .history-card__info
+                                            div
+                                                .history-card__title.link Вопросы про стажировку
+                                                .history-card__date вчера, 9:00
+                                                .history-card__detail Снежана Бабичева
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon.df.alc.jcc
+                                            img(src='assets/img/card/4.svg')
+                                        .history-card__info
+                                            div
+                                                .history-card__title.link Вопросы про стажировку
+                                                .history-card__date вчера, 9:00
+                                                .history-card__detail Снежана Бабичева
+
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon.df.alc.jcc
+                                            img(src='assets/img/card/5.svg')
+                                        .history-card__info
+                                            div
+                                                .history-card__title Приглашение на стажировку
+                                                .history-card__date вчера, 9:00
+                                                .history-card__detail Снежана Бабичева
+
+
+                                .history__card.history-card.new
+                                    .history-card__wrap
+                                        .history-card__icon
+                                            span.event-icon.fi.icon-mail
+                                        .history-card__info
+                                            div
+                                                .history-card__part Ответ на коммерческое предложение
+                                                .history-card__date 11:28
+                                                .history-card__detail
+                                                    div
+                                                        a.file.file--gray(href='#') Предложение.docx
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon
+                                            span.event-icon.fi.icon-mail-send
+                                        .history-card__info
+                                            div
+                                                .history-card__part Поздравление
+                                                .history-card__date 10:20
+                                                span.system-lbl Skilla IS
+                                                .history-card__detail.
+
+                                                    Пусть в этот день рождения сбываются мечты. Все наши поздравления прими скорее ты! Желаем тебе...
+
+                                .history__card.history-card
+                                    .history-card__wrap.history-card__wrap--player
+                                        .history-card__icon
+                                            span.event-icon.fi.icon-phone
+                                        .history-card__info
+                                            div
+                                                .history-card__title Интересно. Просил перезвонить
+                                                .history-card__date вчера, 12:07
+                                        .history-card__time 5:26
+                                        .history-card__audio
+                                            .aplayer
+                                                audio(src='assets/userfiles/uploads/audiotest2.mp3')
+                                                button.aplayer__button.play
+                                                .aplayer__time-wrap
+                                                    .aplayer__timeline
+                                                        .aplayer__playhead
+                                .history__card.history-card
+                                    .history-card__wrap.history-card__wrap--player
+                                        .history-card__icon
+                                            span.event-icon.fi.icon-phone-in
+                                        .history-card__info
+                                            div
+                                                .history-card__title Изучает бизнес-план
+                                                .history-card__date вчера, 15:05
+                                        .history-card__time 20:15
+                                        .history-card__audio
+                                            .aplayer
+                                                audio(src='assets/userfiles/uploads/audiotest2.mp3')
+                                                button.aplayer__button.play
+                                                .aplayer__time-wrap
+                                                    .aplayer__timeline
+                                                        .aplayer__playhead
+                                .history__card.history-card
+                                    .history-card__wrap.history-card__wrap--player
+                                        .history-card__icon
+                                            span.event-icon.fi.icon-phone
+                                        .history-card__info
+                                            div
+                                                .history-card__date 30 янв, 18:30
+                                        .history-card__time 2:40
+                                        .history-card__audio
+                                            .aplayer
+                                                audio(src='assets/userfiles/uploads/audiotest2.mp3')
+                                                button.aplayer__button.play
+                                                .aplayer__time-wrap
+                                                    .aplayer__timeline
+                                                        .aplayer__playhead
+                                //.history__card.history-card
+                                //    .history-card__wrap
+                                //        .history-card__icon
+                                //            img(src='assets/userfiles/uploads/ava-48.jpg', alt)
+                                //        .history-card__info
+                                //            div
+                                //                .history-card__title
+                                //                    span Новичок
+                                //                    img(src='images/arrow-right.svg', alt)
+                                //                    span Анатолий
+                                //                .history-card__date 12 янв
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon
+                                            span.event-icon.fi.icon-pencil
+                                        .history-card__info
+                                            div
+                                                .history-card__title
+                                                    span Отказ
+                                                    img(src='images/arrow-right.svg', alt)
+                                                    span Переговоры
+                                                .history-card__date 8 янв
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon
+                                            span.event-icon.event-icon--warning.fi.icon-phone-in
+                                        .history-card__info
+                                            div
+                                                .history-card__title +7 (952) 352-41-25
+                                                .history-card__date 5 янв, 9:25
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon
+                                            span.event-icon.event-icon--warning.fi.icon-phone
+                                        .history-card__info
+                                            div
+                                                .history-card__title +7 (952) 352-41-25
+                                                .history-card__date 30 дек
+                                                .history-card__detail Новичок
+
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon
+                                            span.event-icon.fi.icon-mail-send
+                                        .history-card__info
+                                            div
+                                                .history-card__part.hcard-open-message Материалы по франшизе
+                                                .history-card__date 15 дек
+                                                .history-card__detail
+                                                    div Новичок
+                                                    .history-card__message
+                                                        .hcard-message
+                                                            .hcard-message__preview Борислав, к сожалению, не смогли до вас дозвониться, чтобы рассказать об открытии бизнеса вместе...
+                                                            .hcard-message__full
+                                                                p Борислав, к сожалению, не смогли до вас дозвониться, чтобы рассказать об открытии бизнеса вместе с нами и объемах прибыли и инвестиций.
+                                                                p Позвоните мне, пожалуйста, по нашему бесплатному номеру телефона 8 800 500 20 20. Мой добавочный ниже в подписи.
+                                                                p Жду, спасибо!
+                                                                p
+                                                                    | Наш Yоutube-канал, Интервью с партнёрами:
+                                                                    a(href='www.youtube.com/skilla', target='_blank') www.youtube.com/skilla
+                                                    div
+                                                        a.file(href='#') Коммерческое предложение.docx
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon
+                                            span.event-icon.fi.icon-comment
+                                        .history-card__info
+                                            div
+                                                .history-card__title Написан комментарий без звонка
+                                                .history-card__date 1 дек
+                                                .history-card__detail.
+                                                    Новичок
+
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon
+                                            span.event-icon.fi.icon-person
+                                        .history-card__info
+                                            div
+                                                .history-card__title
+                                                    span Евгения Купарева
+                                                    img(src='images/arrow-right.svg', alt)
+                                                    span Новичок
+                                                .history-card__date 13 окт
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon
+                                            span.event-icon.event-icon--warning.fi.icon-phone
+                                        .history-card__info
+                                            div
+                                                .history-card__date 1 окт
+                                                .history-card__detail Евгения Купарева
+
+
+
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon
+                                            span.event-icon.fi.icon-phone
+                                        .history-card__info
+                                            div
+                                                .history-card__date 20 сен
+                                                .history-card__detail.
+
+                                                    Евгения Купарева
+
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon
+                                            span.event-icon.fi.icon-smile
+                                        .history-card__info
+                                            div
+                                                .history-card__title Кандидат добавлен
+                                                .history-card__date 12 янв, 9:00
+                                                .history-card__detail Ассистент Ассистентов
+                                .history__card.history-card
+                                    .history-card__wrap
+                                        .history-card__icon
+                                            span.event-icon.fi.icon-smile
+                                        .history-card__info
+                                            div
+                                                .history-card__title Кандидат добавлен
+                                                .history-card__date 12 янв, 9:00
+                                                span.system-lbl Skilla IS
+
+
+                    .col-xl-6.col-12
+                        .row
+                            .col-12.col-sm-12
+                                .white-box.card-box
+                                    .card-box__header
+                                        .card-box-title.card-box-title--history Быстрые действия
+                                    .card-buts
+                                        .card-buts__item
+                                            a(href='#').card_but.but_sin
+                                                span Пригласить на интервью
+                                                img.but_icon(src='assets/img/buts/1.svg')
+                                        .card-buts__item
+                                            a(href='#').card_but.but_red
+                                                span Отказать
+                                                img.but_icon(src='assets/img/buts/3.svg')
+                                        .card-buts__item
+                                            a(href='#').card_but.but_ser
+                                                span Прикрепить документ
+                                                img.but_icon(src='assets/img/buts/3.svg')
+                                            a.file(href='#') Резюме hh
+                                            span.file-info.color 12.12.2020
+
+                                        .card-buts__item
+                                            a(href='#').card_but.but_sin
+                                                span Пригласить на стажировку
+                                                img.but_icon(src='assets/img/buts/1.svg')
+                                        .card-buts__item
+                                            a(href='#').card_but.but_red
+                                                span Стажировка не пройдена
+                                                img.but_icon(src='assets/img/buts/3.svg')
+                                        .card-buts__item
+                                            a(href='#').card_but.but_sin
+                                                span Стажировка пройдена
+                                                img.but_icon(src='assets/img/buts/4.svg')
+                                        .card-buts__item
+                                            a(href='#').card_but.but_sin
+                                                span Провести интервью
+                                                img.but_icon(src='assets/img/buts/5.svg')
+
+
+            .info-popups
+                .popup-card
+                    div(class='popup-card__wrap w100')
+                        .call-client
+                            .call-client__name Павлов Константин Викторович
+                            .call-client__number +7 (915) 481-12-60
+                            .call-client__vac.w100
+                                select.w100(data-placeholder=' ')
+                                    option Менеджер по продажам
+                                    option Менеджер по продажам
+                                    option Менеджер по продажам
+                            .call-client__comment
+                                textarea.input_textarea(type='text' placeholder='Комментарий к звонку' value='' cols='10' rows='60' )
+                            .call-client__but
+                                button.button.w100 Пригласить на интервью
+                            .call-client__comment-list
+                                .call-client__comment-list-item.link Не отвечает
+                                .call-client__comment-list-item.link Сбросил
+                                .call-client__comment-list-item.link Абонент недоступен
+                    button.button.w100.call__cancel
+                        img(src='assets/img/new/call-white.svg')
+                .popup-card
+                    .popup-card__wrap.df.alc
+                        button.popup-card__icon.icon-button.icon-button--check
+                            img(src='assets/img/new/complete.svg')
+                        div
+                            .popup-card__title Статус изменен
+
+                    button.popup-card__close.button-cross.fi.icon-cross.js-popup-close
+                .popup-card
+                    .popup-card__wrap.df.alc
+                        button.popup-card__icon.icon-button.icon-button--check.w76 🎉
+                        div
+                            .popup-card__title Кандидат прошел стажировку! Статус изменен
+
+                    button.popup-card__close.button-cross.fi.icon-cross.js-popup-close
+                .popup-card
+                    .popup-card__wrap
+                        button.popup-card__icon.icon-button.icon-button--check.w76
+                            img(src='assets/img/new/warning.svg')
+                        div
+                            .popup-card__title Вы уверены, что хотите отказать кандидату?
+                            .popup-card__info
+                                a.link.mr20(href='#') Да
+                                a.link(href='#') Не сохранять
+                    button.popup-card__close.button-cross.fi.icon-cross.js-popup-close
+

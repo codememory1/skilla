@@ -1,0 +1,62 @@
+@mixin lg() {
+  @media screen and (min-width: 1441px) {
+    @content;
+  }
+}
+@mixin screen() {
+  @media screen and (max-width: 1441px) {
+    @content;
+  }
+}
+
+@mixin screen-big() {
+  @media screen and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin tablets() {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin mintab() {
+  @media screen and (min-width: 576px) {
+    @content;
+  }
+}
+@mixin phones() {
+  @media screen and (min-width: 420px) {
+    @content;
+  }
+}
+
+@mixin hover{
+  box-shadow: 3px 4px 6px 1px  rgba(0, 0, 0, 0.671);
+    transform: translate(-1px,-1px);
+}
+@mixin active{
+  box-shadow: -1px -1px 2px 1px  rgba(0, 0, 0, 0.671);
+    transform: translate(0,0px);
+    transition: 0s;
+}
+
+@mixin centered($axis: 'both') {
+  position: absolute;
+
+  @if $axis == 'both' {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @if $axis == 'x' {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if $axis == 'y' {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

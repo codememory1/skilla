@@ -1,0 +1,127 @@
+mixin item
+    .rasp-item(data-complete="true")
+        a(href='#').rasp-item__left
+            .rasp-item__info
+                .rasp-item__name Иванова Иванна
+                .rasp-item__vac менеджер
+                .rasp-item__hr-name Бабичева Снежана
+            .rasp-item__photo
+                img(src='assets/img/new/img.png')
+        .rasp-item__menu
+            .rasp-menu
+                img(src='assets/img/new/dots.svg').rasp-menu__img
+            .rasp-item__cebab
+                .rasp-cebab
+                    .rasp-cebab__li
+                        a(href='#').phone-icon__right Позвонить
+                    .rasp-cebab__li
+                        a(href='#').perenos--js Перенести интервью
+                    .rasp-cebab__li
+                        a(href='#').cancel--js  Отменить интервью
+        .popup-card.popup.popup__cancel--js
+            .popup__wrap
+                .popup__head Отмена интервью
+                .popup__manager Константинопольский Константин
+                .popup__vac Менеджер по продажам
+                .popup__name
+                    select(data-placeholder=" ")
+                        option Инициатива кандидата
+                        option Не прошел собеседование
+                        option Отказ от hr
+                .popup__button
+                    button.button.perenos__ok.cancel__ok--js Сохранить изменения
+            button.popup-card__close.button-cross.fi.icon-cross.popup-close--js
+        .popup-card.popup.popup__perenos--js
+            .popup__wrap
+                .popup__head Перенос интервью
+                .popup__name
+                    select(data-placeholder=" ")
+                        option Никольский Илья
+                        option Никольский Илья
+                        option Никольский Илья
+                .popup__time
+                    .popup__date
+                        input(type="text" value="" placeholder="дд-мм-гггг" maxlength="10" class="forms__date datepicker-here popup__input" data-auto-close="true")
+                    .popup__clock
+                        input.popup__clock-input.popup__input.clock-input
+                .popup__button
+                    button.button.perenos__ok.perenos__ok--js Сохранить изменения
+            button.popup-card__close.button-cross.fi.icon-cross.popup-close--js
+mixin item-call
+    .rasp-item.waited(data-status='wait' data-complete="true")
+        a(href='#').rasp-item__left
+            .rasp-item__info
+                .rasp-item__name Иванова Иванна
+                .rasp-item__vac менеджер
+                .rasp-item__hr-name
+            .rasp-item__photo
+        a(href='tel:89000000000').rasp-item__right
+            img(src='assets/img/new/call-good.svg')
+        //.rasp-item__menu
+mixin sidebar
+    a(href='#').btn-add.add_client--js
+        .btn-add__span Добавить кандидата
+    .popup_right
+        .window_add_client
+            .form-header.mb30
+                .form-header__title.title-h2 Добавление кандидата
+            .forms__field
+                .forms__label Фамилия
+                .forms__el
+                    input(type='text' value='')
+            .forms__field
+                .forms__label Имя*
+                .forms__el
+                    input(type='text' value='')
+            .forms__field
+                .forms__label Отчество
+                .forms__el
+                    input(type='text' value='')
+            .forms__field
+                .forms__label Телефон*
+                .forms__el
+                    input.phone-mask(type='text' value='')
+            .forms__field
+                .forms__label Email
+                .forms__el
+                    input(type='email' value='')
+
+            .forms__field
+                .forms__label Вакансия
+                .forms__el
+                    .jq-selectbox.jqselect
+                        select(data-placeholder=' ')
+                            option Менеджер по работе с клиентами
+                            option Логист
+                            option Менеджер по работе с клиентами
+                            option Менеджер
+                            option Менеджер по работе с клиентами
+            .task-box
+                .task-box__header.js-task-open.task_header
+                    .task-box__title Приглашение на интервью
+                    .task-box__task
+                    span.task-box__icon.fi.icon-plus-round.mt-26
+                    button.task-box__del.button-cross.fi.icon-cross.js-task-remove
+                .task-box__form.task-form.forms
+                    .task-form__wrap.df.fdc
+                        .forms__field
+                            .forms__label.w75 Интервьюер
+                            .forms__el.w100
+                                    select(data-placeholder=' ')
+                                        option Бабичева Снежана
+                                        option Бабичева Снежана
+                                        option Бабичева Снежана
+                                        option Бабичева Снежана
+                                        option Бабичева Снежана
+                        .forms__field
+                            .forms__label.w75 Дата
+                            .forms__el
+                                input(type="text" value="" placeholder="дд-мм-гггг" maxlength="10" class="forms__date datepicker-here popup__input" data-auto-close="true")
+                        .forms__field
+                            .forms__label.w75 Время
+                            .forms__el.popup__clock.w160
+                                input.popup__clock-input.popup__input.clock-input.w160
+
+            .forms-buttons
+                button.button.w100 Сохранить
+            button.task-form__close.button-cross.fi.icon-cross.js-task-close.close_add_can--js

@@ -1,0 +1,42 @@
+include mixins
+block variables
+
+doctype html
+html(lang='ru-RU')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(name='format-detection' content='telephone=no')
+    title #{title}
+    // PLUGINS
+    script(src='assets/userfiles/jquery/jquery-3.4.1.min.js')
+    script(src='assets/userfiles/moment-with-locales.min.js')
+    script(src='assets/userfiles/moment.js')
+    // JQUERY UI
+    link(href='assets/userfiles/jquery-ui/jquery-ui.min.css' rel='stylesheet' type='text/css')
+    script(src='assets/userfiles/jquery-ui/jquery-ui.min.js')
+    // FANCYBOX
+    link(href='assets/userfiles/fancybox/jquery.fancybox.min.css' rel='stylesheet' type='text/css')
+    script(src='assets/userfiles/fancybox/jquery.fancybox.min.js')
+    // MASKEDINPUT
+    script(src='assets/userfiles/maskedinput/jquery.maskedinput.min.js')
+    // formstyler
+    link(href='assets/userfiles/formstyler/jquery.formstyler.css' rel='stylesheet' type='text/css')
+    link(href='assets/userfiles/formstyler/jquery.formstyler.theme.css' rel='stylesheet' type='text/css')
+    script(src='assets/userfiles/formstyler/jquery.formstyler.js')
+    // AIRDATEPICKER
+    link(href='assets/userfiles/airdatepicker/datepicker.min.css' rel='stylesheet' type='text/css')
+    script(src='assets/userfiles/airdatepicker/datepicker.min.js')
+    script(src='assets/userfiles/airdatepicker/date.format.js')
+    // TAGINPUT
+    script(src='assets/userfiles/taginput/taginput.js')
+    // SITE SCRIPT
+    //script(src='assets/js/common.js')
+    // SITE STYLE
+    link(href='https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap&subset=cyrillic-ext' rel='stylesheet')
+    link(href='assets/fonts/fonticon.css' rel='stylesheet' type='text/css')
+    link(href='assets/css/main.css' rel='stylesheet' type='text/css')
+  body
+    block content
+    script(src='/assets/js/app.js' defer)
+

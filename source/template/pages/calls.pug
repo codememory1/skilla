@@ -1,0 +1,359 @@
+extends ../_template
+
+block variables
+    - var title = 'Звонки :::  skilla'
+block content
+    .cbc
+        aside.sidebar
+            .sidebar__top
+                .sidebar__logo
+                    a(href='contract-add-individual.html')
+                        img(src='assets/img/logo.svg' alt='')
+                button.sidebar__toggle.toggle-sidebar
+                    img(src='assets/img/burger-open.svg' alt='')
+            .sidebar__user
+                .sb-user
+                    .sb-user__wrap
+                        figure.sb-user__ava
+                            img(src='assets/userfiles/uploads/img-logo.png' alt='')
+                        .sb-user__info
+                            .sb-user__name Снежана Бабичева
+                            .sb-user__contacts
+                                | hi@skilla.ru
+                                br
+                                | 8 (800) 333-17-21
+                    .sb-user__popup.user-popup
+                        .user-popup__name Анатолий Квирая
+                        .user-popup__post Менеджер
+                        .user-popup__contacts
+                            | 8 800 775-63-17
+                            br
+                            |                            T.Kviraja@skilla.ru
+                        .user-popup__info
+                            | ИП Упоров К.А.
+                            br
+                            |                            Санкт-Петербург
+                        .user-popup__nav.user-nav
+                            .user-nav__item
+                                a.user-nav__link(href='#') Выйти
+            .sidebar__wrap
+                .side-nav
+                    .side-nav__item
+                        a.side-nav__link.sn-link.active(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector.svg' alt='')
+                            span.sn-link__title Расписание
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-1.svg' alt='')
+                            span.sn-link__title Кандидаты
+                            span.sn-link__label.sn-link__label--yellow
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-2.svg' alt='')
+                            span.sn-link__title Звонки
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-3.svg' alt='')
+                            span.sn-link__title Стажеры
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-4.svg' alt='')
+                            span.sn-link__title Настройки
+                .side__add
+                    a(href='#').btn-add
+                        .btn-add__span Добавить кандидата
+
+        main.page-content
+            .page-content__wrap
+                .page-header
+                    .tab-list
+                        .tab-list__item
+                            a.tab-item.tab-item--active(href='#')
+                                span.tab-item__title Все
+                                span.tab-item__count.tab-item__count_mod 68
+
+                        .tab-list__item
+                            a.tab-item(href='#') Входящие
+
+                        .tab-list__item
+                            a.tab-item(href='#')
+                                span.tab-item__title Исходящие
+
+
+                    .search
+                        .search__form
+                            input.search__text(type='text' value='')
+                            button.search__button.fi.icon-search
+                        span.search__open.fi.icon-search.js-open-search-form
+                .white-box
+                    table.tbl
+                        tbody
+                            tr.head__tr.df.jcfe
+                                th
+                                th
+                                    .drop-list
+                                        .drop-list__title Дата
+                                        ul.drop-list__dropdown.dl-dropdown
+                                            li.dl-dropdown__item.active
+                                                a(href='#') Все
+                                            li.dl-dropdown__item
+                                                a(href='#') Вчера
+                                            li.dl-dropdown__item
+                                                a(href='#') Сегодня
+                                            li.dl-dropdown__item
+                                                a(href='#') Месяц
+                                            li.dl-dropdown__date.dropdown-date
+                                                .dropdown-date__title Указать даты
+                                                .dropdown-date__form.date-range(data-close-dropdown='true')
+                                                    .date-range__input
+                                                        input.date-start(type='text' value='' placeholder='__.__.__' disabled='')
+                                                    .date-range__sepor –
+                                                    .date-range__input
+                                                        input.date-finish(type='text' value='' placeholder='__.__.__' disabled='')
+                                                    input.range-datepicker.date-range__datepicker(type='text' data-range='true' name='date' autocomplete='off')
+
+                                th
+                                    .drop-list(data-title-replace='true')
+                                        .drop-list__title Все сотрудники
+                                        ul.drop-list__dropdown.dl-dropdown
+                                            li.dl-dropdown__item.active
+                                                a(href='#') Все
+                                            li.dl-dropdown__item
+                                                a(href='#') Бабичева Снежана
+                                            li.dl-dropdown__item
+                                                a(href='#') Корчагина Юля
+                                            li.dl-dropdown__item
+                                                a(href='#') Бабичева Снежана
+                                            li.dl-dropdown__item
+                                                a(href='#') Ассистент Ассистентов
+                    .calls
+                        //.calls__day-name
+                        .calls__day
+                            .calls__item
+                                .calls__icon
+                                    img.calls__icon(src='assets/img/new/phone-icon.svg')
+                                .calls__time 21:00
+                                .calls__abonent
+                                    .calls-abonent
+                                        .tbl-client__title Дурдымырадов Халбай
+                                        .calls__vacan Менеджер по продажам
+                                    .calls-audio
+                                        .audio.green-audio-player
+                                            .audio__close
+                                                img(src='assets/img/new/close.svg')
+                                            .loading
+                                                .spinner
+                                            .play-pause-btn
+                                                .audio__play
+                                                    svg(xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 15 24')
+                                                        path.playPause.play-pause-icon(fill='#0091EA' fill-rule='evenodd' d='M18 12L0 24V0')
+                                            .controls
+                                                span.current-time.audio__time 0:00
+                                                .slider(data-direction='horizontal')
+                                                    .progress
+                                                        .progress-pin.pin(data-method='rewind')
+                                                //span.total-time 0:00
+                                            .volume
+                                                .volume-btn
+                                                    svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24')
+                                                        path.speaker(fill='#566574' fill-rule='evenodd' d='M14.667 0v2.747c3.853 1.146 6.666 4.72 6.666 8.946 0 4.227-2.813 7.787-6.666 8.934v2.76C20 22.173 24 17.4 24 11.693 24 5.987 20 1.213 14.667 0zM18 11.693c0-2.36-1.333-4.386-3.333-5.373v10.707c2-.947 3.333-2.987 3.333-5.334zm-18-4v8h5.333L12 22.36V1.027L5.333 7.693H0z')
+                                                .volume-controls.hidden
+                                                    .slider(data-direction='vertical')
+                                                        .progress
+                                                            .volume-pin.pin(data-method='changeVolume')
+                                            audio(crossorigin='')
+                                                source(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/355309/Swing_Jazz_Drum.mp3' type='audio/mpeg')
+                                .calls__time2 7:30
+                                .calls__manager Корчагина Юлия
+                        .calls__day-name
+                            .day-name Вчера
+                            span.tab-item__count 68
+                        .calls__day
+                            .calls__item
+                                .calls__icon
+                                    img.calls__icon(src='assets/img/new/phone-icon.svg')
+                                .calls__time 21:00
+                                .calls__abonent
+                                    .calls-abonent
+                                        .tbl-client__title Дурдымырадов Халбай
+                                        .calls__vacan Менеджер по продажам
+                                    .calls-audio
+                                        .audio.green-audio-player
+                                            .audio__close
+                                                img(src='assets/img/new/close.svg')
+                                            .loading
+                                                .spinner
+                                            .play-pause-btn
+                                                .audio__play
+                                                    svg(xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 15 24')
+                                                        path.playPause.play-pause-icon(fill='#0091EA' fill-rule='evenodd' d='M18 12L0 24V0')
+                                            .controls
+                                                span.current-time.audio__time 0:00
+                                                .slider(data-direction='horizontal')
+                                                    .progress
+                                                        .progress-pin.pin(data-method='rewind')
+                                                //span.total-time 0:00
+                                            .volume
+                                                .volume-btn
+                                                    svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24')
+                                                        path.speaker(fill='#566574' fill-rule='evenodd' d='M14.667 0v2.747c3.853 1.146 6.666 4.72 6.666 8.946 0 4.227-2.813 7.787-6.666 8.934v2.76C20 22.173 24 17.4 24 11.693 24 5.987 20 1.213 14.667 0zM18 11.693c0-2.36-1.333-4.386-3.333-5.373v10.707c2-.947 3.333-2.987 3.333-5.334zm-18-4v8h5.333L12 22.36V1.027L5.333 7.693H0z')
+                                                .volume-controls.hidden
+                                                    .slider(data-direction='vertical')
+                                                        .progress
+                                                            .volume-pin.pin(data-method='changeVolume')
+                                            audio(crossorigin='')
+                                                source(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/355309/Swing_Jazz_Drum.mp3' type='audio/mpeg')
+                                .calls__time2 7:30
+                                .calls__manager Корчагина Юлия
+                            .calls__item
+                                .calls__icon
+                                    img.calls__icon(src='assets/img/new/phone-icon.svg')
+                                .calls__time 21:00
+                                .calls__abonent
+                                    .calls-abonent
+                                        .tbl-client__title Дурдымырадов Халбай
+                                        .calls__vacan Менеджер по продажам
+                                    .calls-audio
+                                        .audio.green-audio-player
+                                            .audio__close
+                                                img(src='assets/img/new/close.svg')
+                                            .loading
+                                                .spinner
+                                            .play-pause-btn
+                                                .audio__play
+                                                    svg(xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 15 24')
+                                                        path.playPause.play-pause-icon(fill='#0091EA' fill-rule='evenodd' d='M18 12L0 24V0')
+                                            .controls
+                                                span.current-time.audio__time 0:00
+                                                .slider(data-direction='horizontal')
+                                                    .progress
+                                                        .progress-pin.pin(data-method='rewind')
+                                                //span.total-time 0:00
+                                            .volume
+                                                .volume-btn
+                                                    svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24')
+                                                        path.speaker(fill='#566574' fill-rule='evenodd' d='M14.667 0v2.747c3.853 1.146 6.666 4.72 6.666 8.946 0 4.227-2.813 7.787-6.666 8.934v2.76C20 22.173 24 17.4 24 11.693 24 5.987 20 1.213 14.667 0zM18 11.693c0-2.36-1.333-4.386-3.333-5.373v10.707c2-.947 3.333-2.987 3.333-5.334zm-18-4v8h5.333L12 22.36V1.027L5.333 7.693H0z')
+                                                .volume-controls.hidden
+                                                    .slider(data-direction='vertical')
+                                                        .progress
+                                                            .volume-pin.pin(data-method='changeVolume')
+                                            audio(crossorigin='')
+                                                source(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/355309/Swing_Jazz_Drum.mp3' type='audio/mpeg')
+                                .calls__time2 7:30
+                                .calls__manager Корчагина Юлия
+
+                            .calls__item
+                                .calls__icon
+                                    img.calls__icon(src='assets/img/new/phone-icon.svg')
+                                .calls__time 21:00
+                                .calls__abonent
+                                    .calls-abonent
+                                        .tbl-client__title Дурдымырадов Халбай
+                                        .calls__vacan Менеджер по продажам
+                                    .calls-audio
+                                        .audio.green-audio-player
+                                            .audio__close
+                                                img(src='assets/img/new/close.svg')
+                                            .loading
+                                                .spinner
+                                            .play-pause-btn
+                                                .audio__play
+                                                    svg(xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 15 24')
+                                                        path.playPause.play-pause-icon(fill='#0091EA' fill-rule='evenodd' d='M18 12L0 24V0')
+                                            .controls
+                                                span.current-time.audio__time 0:00
+                                                .slider(data-direction='horizontal')
+                                                    .progress
+                                                        .progress-pin.pin(data-method='rewind')
+                                                //span.total-time 0:00
+                                            .volume
+                                                .volume-btn
+                                                    svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24')
+                                                        path.speaker(fill='#566574' fill-rule='evenodd' d='M14.667 0v2.747c3.853 1.146 6.666 4.72 6.666 8.946 0 4.227-2.813 7.787-6.666 8.934v2.76C20 22.173 24 17.4 24 11.693 24 5.987 20 1.213 14.667 0zM18 11.693c0-2.36-1.333-4.386-3.333-5.373v10.707c2-.947 3.333-2.987 3.333-5.334zm-18-4v8h5.333L12 22.36V1.027L5.333 7.693H0z')
+                                                .volume-controls.hidden
+                                                    .slider(data-direction='vertical')
+                                                        .progress
+                                                            .volume-pin.pin(data-method='changeVolume')
+                                            audio(crossorigin='')
+                                                source(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/355309/Swing_Jazz_Drum.mp3' type='audio/mpeg')
+                                .calls__time2 7:30
+                                .calls__manager Корчагина Юлия
+
+                            .calls__item
+                                .calls__icon
+                                    img.calls__icon(src='assets/img/new/phone-close.svg')
+                                .calls__time 21:00
+                                .calls__abonent
+                                    .calls-abonent
+                                        .tbl-client__title +7 (987) 678-78-78
+                                        .calls__vacan
+                                    .btn-add.btn-add_calls
+                                        .btn-add__span Добавить кандидата
+                                    .calls-audio
+                                        .audio.green-audio-player
+                                            .audio__close
+                                                img(src='assets/img/new/close.svg')
+                                            .loading
+                                                .spinner
+                                            .play-pause-btn
+                                                .audio__play
+                                                    svg(xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 15 24')
+                                                        path.playPause.play-pause-icon(fill='#0091EA' fill-rule='evenodd' d='M18 12L0 24V0')
+                                            .controls
+                                                span.current-time.audio__time 0:00
+                                                .slider(data-direction='horizontal')
+                                                    .progress
+                                                        .progress-pin.pin(data-method='rewind')
+                                                //span.total-time 0:00
+                                            .volume
+                                                .volume-btn
+                                                    svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24')
+                                                        path.speaker(fill='#566574' fill-rule='evenodd' d='M14.667 0v2.747c3.853 1.146 6.666 4.72 6.666 8.946 0 4.227-2.813 7.787-6.666 8.934v2.76C20 22.173 24 17.4 24 11.693 24 5.987 20 1.213 14.667 0zM18 11.693c0-2.36-1.333-4.386-3.333-5.373v10.707c2-.947 3.333-2.987 3.333-5.334zm-18-4v8h5.333L12 22.36V1.027L5.333 7.693H0z')
+                                                .volume-controls.hidden
+                                                    .slider(data-direction='vertical')
+                                                        .progress
+                                                            .volume-pin.pin(data-method='changeVolume')
+                                            audio(crossorigin='')
+                                                source(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/355309/Swing_Jazz_Drum.mp3' type='audio/mpeg')
+                                .calls__time2 7:30
+                                .calls__manager Корчагина Юлия
+                            .calls__item
+                                .calls__icon
+                                    img.calls__icon(src='assets/img/new/call-none.svg')
+                                .calls__time 21:00
+                                .calls__abonent
+                                    .calls-abonent
+                                        .tbl-client__title Дурдымырадов Халбай
+                                        .calls__vacan Менеджер по продажам
+                                    .calls-audio
+                                        .audio.green-audio-player
+                                            .audio__close
+                                            .loading
+                                                .spinner
+                                            .play-pause-btn
+                                                .audio__play
+                                                    svg(xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 15 24')
+                                                        path.playPause.play-pause-icon(fill='#0091EA' fill-rule='evenodd' d='M18 12L0 24V0')
+                                            .controls
+                                                span.current-time.audio__time 0:00
+                                                .slider(data-direction='horizontal')
+                                                    .progress
+                                                        .progress-pin.pin(data-method='rewind')
+                                                //span.total-time 0:00
+                                            .volume
+                                                .volume-btn
+                                                    svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24')
+                                                        path.speaker(fill='#566574' fill-rule='evenodd' d='M14.667 0v2.747c3.853 1.146 6.666 4.72 6.666 8.946 0 4.227-2.813 7.787-6.666 8.934v2.76C20 22.173 24 17.4 24 11.693 24 5.987 20 1.213 14.667 0zM18 11.693c0-2.36-1.333-4.386-3.333-5.373v10.707c2-.947 3.333-2.987 3.333-5.334zm-18-4v8h5.333L12 22.36V1.027L5.333 7.693H0z')
+                                                .volume-controls.hidden
+                                                    .slider(data-direction='vertical')
+                                                        .progress
+                                                            .volume-pin.pin(data-method='changeVolume')
+                                            audio(crossorigin='')
+                                                source(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/355309/Swing_Jazz_Drum.mp3' type='audio/mpeg')
+                                .calls__time2 7:30
+                                .calls__manager Корчагина Юлия

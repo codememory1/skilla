@@ -1,0 +1,315 @@
+extends ../_template
+
+block variables
+    - var title = 'Кандидаты избранное :::  skilla'
+block content
+    .cbc
+        aside.sidebar
+            .sidebar__top
+                .sidebar__logo
+                    a(href='contract-add-individual.html')
+                        img(src='assets/img/logo.svg' alt='')
+                button.sidebar__toggle.toggle-sidebar
+                    img(src='assets/img/burger-open.svg' alt='')
+            .sidebar__user
+                .sb-user
+                    .sb-user__wrap
+                        figure.sb-user__ava
+                            img(src='assets/userfiles/uploads/img-logo.png' alt='')
+                        .sb-user__info
+                            .sb-user__name Снежана Бабичева
+                            .sb-user__contacts
+                                | hi@skilla.ru
+                                br
+                                | 8 (800) 333-17-21
+                    .sb-user__popup.user-popup
+                        .user-popup__name Анатолий Квирая
+                        .user-popup__post Менеджер
+                        .user-popup__contacts
+                            | 8 800 775-63-17
+                            br
+                            |                            T.Kviraja@skilla.ru
+                        .user-popup__info
+                            | ИП Упоров К.А.
+                            br
+                            |                            Санкт-Петербург
+                        .user-popup__nav.user-nav
+                            .user-nav__item
+                                a.user-nav__link(href='#') Выйти
+            .sidebar__wrap
+                .side-nav
+                    .side-nav__item
+                        a.side-nav__link.sn-link.active(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector.svg' alt='')
+                            span.sn-link__title Расписание
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-1.svg' alt='')
+                            span.sn-link__title Кандидаты
+                            span.sn-link__label.sn-link__label--yellow
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-2.svg' alt='')
+                            span.sn-link__title Звонки
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-3.svg' alt='')
+                            span.sn-link__title Стажеры
+                    .side-nav__item
+                        a.side-nav__link.sn-link(href='#')
+                            span.sn-link__icon
+                                img(src='assets/img/new/vector-4.svg' alt='')
+                            span.sn-link__title Настройки
+                .side__add
+                    + sidebar
+
+        main.page-content
+            .page-content__wrap
+                .page-header
+                    .tab-list
+                        .tab-list__item
+                            a.tab-item(href='#')
+                                span.tab-item__title Новые
+                                span.tab-item__count.tab-item__count--new 48
+                        .tab-list__item
+                            a.tab-item(href='#')
+                                span.tab-item__title Требуют действия
+                                span.tab-item__count.tab-item__count--new 4
+                        .tab-list__item
+                            a.tab-item(href='#')
+                                span.tab-item__title В работе
+                                span.tab-item__count 68
+                        .tab-list__item
+                            a.tab-item.tab-item--active(href='#')
+                                span.tab-item__title Избранное
+                                span.tab-item__count 68
+                        .tab-list__item
+                            a.tab-item(href='#')
+                                span.tab-item__title Архив
+                    .search
+                        .search__form
+                            input.search__text(type='text' value='')
+                            button.search__button.fi.icon-search
+                        span.search__open.fi.icon-search.js-open-search-form
+                .white-box
+                    table.tbl
+                        tbody
+                            tr.head__tr
+                                th
+                                th.tbl-col__client Кандидат
+                                th
+                                    .drop-list(data-title-replace='true')
+                                        .drop-list__title Вакансия
+                                        ul.drop-list__dropdown.dl-dropdown
+                                            li.dl-dropdown__item.active
+                                                a(href='#') Все
+                                            li.dl-dropdown__item
+                                                a(href='#') Менеджер
+                                            li.dl-dropdown__item
+                                                a(href='#') Руководитель отдела продаж
+                                            li.dl-dropdown__item
+                                                a(href='#') Разработчик
+                                            li.dl-dropdown__item
+                                                a(href='#') Менеджер по работе с клиентами
+
+                                th
+                                    .drop-list(data-title-replace='true')
+                                        .drop-list__title Статус
+                                        ul.drop-list__dropdown.dl-dropdown
+                                            li.dl-dropdown__item.active
+                                                a(href='#') Все
+                                            li.dl-dropdown__item
+                                                a(href='#') Повторное интервью
+                                            li.dl-dropdown__item
+                                                a(href='#') Отказ от кандидата
+                                            li.dl-dropdown__item
+                                                a(href='#') Приглашение на стажировку
+                                            li.dl-dropdown__item
+                                                a(href='#') Отказ от HR
+                                            li.dl-dropdown__item
+                                                a(href='#') Приглашение на стажировку
+
+
+                                th
+                                    .drop-list
+                                        .drop-list__title Дата добавления
+                                        ul.drop-list__dropdown.dl-dropdown
+                                            li.dl-dropdown__item.active
+                                                a(href='#') Все
+                                            li.dl-dropdown__item
+                                                a(href='#') Вчера
+                                            li.dl-dropdown__item
+                                                a(href='#') Сегодня
+                                            li.dl-dropdown__item
+                                                a(href='#') Месяц
+                                            li.dl-dropdown__date.dropdown-date
+                                                .dropdown-date__title Указать даты
+                                                .dropdown-date__form.date-range(data-close-dropdown='true')
+                                                    .date-range__input
+                                                        input.date-start(type='text' value='' placeholder='__.__.__' disabled='')
+                                                    .date-range__sepor –
+                                                    .date-range__input
+                                                        input.date-finish(type='text' value='' placeholder='__.__.__' disabled='')
+                                                    input.range-datepicker.date-range__datepicker(type='text' data-range='true' name='date' autocomplete='off')
+
+                                th
+                                    .drop-list(data-title-replace='true')
+                                        .drop-list__title Кто добавил
+                                        ul.drop-list__dropdown.dl-dropdown
+                                            li.dl-dropdown__item.active
+                                                a(href='#') Все
+                                            li.dl-dropdown__item
+                                                a(href='#') Бабичева Снежана
+                                            li.dl-dropdown__item
+                                                a(href='#') Корчагина Юля
+                                            li.dl-dropdown__item
+                                                a(href='#') Бабичева Снежана
+                                            li.dl-dropdown__item
+                                                a(href='#') Ассистент Ассистентов
+                                th Примечание
+                                th Активность
+
+
+                            tr.row-link(data-link='')
+                                td
+                                td.tbl__client
+                                    .tbl-client
+                                        .tbl-client__title Сафронов Иван
+                                            span.tbl-client__time 45 лет
+                                td Менеджер
+                                td Интервью
+                                td Сегодня
+                                td Бабичева Снежана
+                                td Может опоздать на 10 минут
+                                td
+                                    .tbl-actions
+                                        .tbl-active
+                                            button.icon-button.cirkle__aktive
+
+                                            button.icon-button.cirkle__aktive
+                                        .tbl-action
+                                            button.icon-button.fi.icon-star.add-to-fav
+
+                            tr.row-link(data-link='')
+                                td
+                                td.tbl__client
+                                    .tbl-client
+                                        .tbl-client__title Сафронов Иван
+                                            span.tbl-client__time 45 лет
+                                td Менеджер
+                                td Повторное интервью
+                                td Вчера
+                                td Корчагина Юлия
+                                td
+                                td
+                                    .tbl-actions
+                                        .tbl-active
+                                            button.icon-button.cirkle__aktive
+
+                                        .tbl-action
+                                            button.icon-button.fi.icon-star.add-to-fav
+
+                            tr.row-link(data-link='')
+                                td
+                                td.tbl__client
+                                    .tbl-client
+                                        .tbl-client__title Сафронов Иван
+                                            span.tbl-client__time 45 лет
+                                td Менеджер
+                                td Отказ от кандидата
+                                td Сегодня
+                                td Бабичева Снежана
+                                td Хороший кандидат, идеально подходит, но выбрала другое место работы.
+                                td
+                                    .tbl-actions
+                                        .tbl-active
+                                            button.icon-button.cirkle__aktive
+                                            button.icon-button.cirkle__aktive
+                                            button.icon-button.cirkle__aktive
+                                        .tbl-action
+                                            button.icon-button.fi.icon-star.add-to-fav
+
+                            tr.row-link(data-link='')
+                                td
+                                td.tbl__client
+                                    .tbl-client
+                                        .tbl-client__title Сафронов Иван
+                                            span.tbl-client__time 45 лет
+                                td Менеджер по работе с клиентами
+                                td Приглашение на стажировку
+                                td 26 янв
+                                td Корчагина Юлия
+                                td Нормальный
+                                td
+                                    .tbl-actions
+                                        .tbl-active
+                                            button.icon-button.cirkle__aktive
+                                            button.icon-button.cirkle__aktive
+                                            button.icon-button.cirkle__aktive
+                                        .tbl-action
+                                            button.icon-button.fi.icon-star.add-to-fav
+
+                            tr.row-link(data-link='')
+                                td
+                                td.tbl__client
+                                    .tbl-client
+                                        .tbl-client__title Сафронов Иван
+                                            span.tbl-client__time 45 лет
+                                td Менеджер по работе с клиентами
+                                td Отказ от HR
+                                td 12.12.2020
+                                td Бабичева Снежана
+                                td Недисциплинированный
+                                td
+                                    .tbl-actions
+                                        .tbl-active
+                                            button.icon-button.cirkle__aktive
+                                            button.icon-button.cirkle__aktive
+                                            button.icon-button.cirkle__aktive
+                                        .tbl-action
+                                            button.icon-button.fi.icon-star.add-to-fav
+
+                            tr.row-link(data-link='')
+                                td
+                                td.tbl__client
+                                    .tbl-client
+                                        .tbl-client__title Сафронов Иван
+                                            span.tbl-client__time 45 лет
+                                td Водитель
+                                td Приглашение на стажировку
+                                td Сегодня
+                                td Бабичева Снежана
+                                td Хочет работать 2 через 2
+                                td
+                                    .tbl-actions
+                                        .tbl-active
+                                            button.icon-button.cirkle__aktive
+                                            button.icon-button.cirkle__aktive
+                                            button.icon-button.cirkle__aktive
+                                        .tbl-action
+                                            button.icon-button.fi.icon-star.add-to-fav
+
+                            tr.row-link(data-link='')
+                                td
+                                td.tbl__client
+                                    .tbl-client
+                                        .tbl-client__title Сафронов Иван
+                                            span.tbl-client__time 45 лет
+                                td Водитель
+                                td Приглашение на стажировку
+                                td Сегодня
+                                td Бабичева Снежана
+                                td Стажировка с 1 февраля
+                                td
+                                    .tbl-actions
+                                        .tbl-active
+                                            button.icon-button.cirkle__aktive
+                                            button.icon-button.cirkle__aktive
+                                            button.icon-button.cirkle__aktive
+                                        .tbl-action
+                                            button.icon-button.fi.icon-star.add-to-fav
+
